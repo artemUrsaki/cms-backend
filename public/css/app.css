@@ -1,0 +1,106 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Umožní nastavenie výšky 100% pre celú stránku */
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Urobíme header fixovaný na vrchu */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Uistíme sa, že je nad ostatným obsahom */
+}
+
+/* Logo */
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+
+
+/* Navigácia */
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+header nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Body obsah */
+main {
+    margin-top: 70px; /* Priestor pod fixovaným headerom */
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Pre mobilné zariadenia */
+@media screen and (max-width: 768px) {
+    /* Skryté menu na mobilných zariadeniach */
+    header nav ul {
+        display: flex; /* Urobíme ho zobrazené aj na mobiloch, bez potreby hamburgera */
+        width: 100%;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    header nav ul li {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
