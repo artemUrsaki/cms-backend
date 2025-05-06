@@ -15,21 +15,10 @@
 
         <!-- Scripts -->
         @routes
-        @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
+        @vite(['resources/js/app.js'])
         @inertiaHead
     </head>
     <body class="font-sans antialiased">
         @inertia
-
-            <!-- zahrnutie headeru -->
-    @include('header')
-
-    <main>
-        @yield('content')
-    </main>
-
-    <!-- zahrnutie footeru -->
-    @include('footer')
-
     </body>
 </html>
