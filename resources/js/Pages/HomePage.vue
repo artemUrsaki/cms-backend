@@ -1,12 +1,5 @@
-<script>
+<script setup>
 import PageLayout from '@/Layouts/PageLayout.vue';
-
-export default {
-    name: 'HomePage',
-    components: {
-        PageLayout
-    }
-};
 </script>
 
 <template>
