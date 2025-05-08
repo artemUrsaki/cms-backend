@@ -45,4 +45,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function conferences()
+    {
+        $this->belongsToMany(Conference::class, 'user_conference');
+    }
 }
