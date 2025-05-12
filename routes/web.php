@@ -19,10 +19,18 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['auth', 'permission:admin'])->group(function () {
-    Route::get('/admin', function () {
-        return Inertia::render('Admin/AdminPanel');
+Route::middleware(['auth', 'permission:admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', function () {
+        return redirect(route('admin.users'));
     });
+
+    Route::get('/users', function () {
+        return Inertia::render('Admin/ManageUsers');
+    })->name('users');
+
+    Route::get('/conferences', function () {
+        return Inertia::render('Admin/ManageConferences');
+    })->name('conferences');
 });
 
 require __DIR__.'/auth.php';
