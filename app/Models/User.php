@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id'
     ];
 
     /**
@@ -48,6 +49,11 @@ class User extends Authenticatable
 
     public function conferences()
     {
-        $this->belongsToMany(Conference::class, 'user_conference');
+        return $this->belongsToMany(Conference::class, 'user_conference');
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
     }
 }
